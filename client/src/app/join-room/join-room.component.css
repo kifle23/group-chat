@@ -1,0 +1,22 @@
+.cool-heading {
+  font-size: 3rem;
+  color: #007bff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  animation-name: coolAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes coolAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    color: #ff4081;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
