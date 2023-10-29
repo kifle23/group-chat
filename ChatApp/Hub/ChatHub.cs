@@ -32,6 +32,16 @@ namespace ChatApp.Hub
             return Clients.Group(room).SendAsync(method: "ConnectedUser", users);
         }
 
+        public override async Task OnDisconnectedAsync(Exception? exception)
+        {
+            if (_connection.TryGetValue(Context.ConnectionId, out var userConnection))
+            {
+                await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", $"{userConnection.User} has left the room");
+                await SendConnectedUser(userConnection.Room!);
+            }
+            await base.OnDisconnectedAsync(exception);
+        }
+
 
     }
 }
