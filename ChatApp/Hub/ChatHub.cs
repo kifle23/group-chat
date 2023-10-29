@@ -16,6 +16,7 @@ namespace ChatApp.Hub
             await Groups.AddToGroupAsync(Context.ConnectionId, userConnection.Room!);
             _connection.Add(Context.ConnectionId, userConnection);
             await Clients.Group(userConnection.Room!).SendAsync("ReceiveMessage", $"{userConnection.User} has joined the room {userConnection.Room}");
+            await SendConnectedUser(userConnection.Room!);
         }
 
         public async Task SendMessage(string message)
