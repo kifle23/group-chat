@@ -2,12 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-md-6 rounded-lg shadow-lg bg-light p-4">
       <h1 class="text-center mb-4 cool-heading">Join Room</h1>
-      <form>
+      <form [formGroup]="joinRoomForm">
         <div class="mb-3">
           <div class="text-center mb-3">
             <img
               src="https://img.icons8.com/ios-filled/50/000000/room.png"
-              class="img-fluid"
+              class="img-fluid rotating-image"
               alt="Room"
             />
           </div>
@@ -15,7 +15,7 @@
             type="text"
             class="form-control"
             id="roomName"
-            name="roomName"
+            formControlName="room"
             placeholder="Enter room name"
             required
           />
@@ -25,12 +25,16 @@
             type="text"
             class="form-control"
             id="displayName"
-            name="displayName"
+            formControlName="user"
             placeholder="Enter display name"
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-block mb-3">
+        <button [disabled]="joinRoomForm.invalid"
+          (click)="joinRoom()"
+          type="submit"
+          class="btn btn-primary btn-block mb-3"
+        >
           <i class="fas fa-sign-in-alt me-2"></i> Join
         </button>
       </form>
