@@ -1,1 +1,41 @@
-<p>chat works!</p>
+<div class="chatroom-container">
+  <div class="header">
+    <div class="welcome-message">
+      <h2>Welcome to the Chatroom!</h2>
+    </div>
+    <button class="btn btn-danger">Leave Chat</button>
+  </div>
+
+  <div class="chatroom-body">
+    <div class="left-section">
+      <div class="connected-users">
+        <div class="connected-users-header">
+          <h6>
+            Connected Users <i class="fas fa-user-friends text-warning"></i>
+          </h6>
+        </div>
+        <div class="search-users">
+          <div class="search">
+            <input type="text" placeholder="Search users..." />
+            <i class="fas fa-search text-info"></i>
+          </div>
+        </div>
+        <div class="right-section">
+          <div class="chat-input">
+            <input type="text" placeholder="Type your message..." />
+          </div>
+        </div>
+      </div>
+      <div class="user-list">
+        <!-- Dummy user profiles -->
+        <div class="user-profile">
+          <i class="fas fa-user-circle fa-3x text-info"></i>
+          <div class="user-info">
+            <h6>Username <i class="fas fa-circle active"></i></h6>
+          </div>
+        </div>
+        <!-- Add more user profiles here -->
+      </div>
+    </div>
+  </div>
+</div>

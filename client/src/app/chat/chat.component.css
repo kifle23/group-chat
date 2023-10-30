@@ -1,0 +1,150 @@
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.chatroom-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 90vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid#e0e0e0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.welcome-message {
+  text-align: center;
+}
+
+.btn-danger {
+  padding: 10px;
+  background-color: #f44336;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.chatroom-body {
+  display: flex;
+}
+
+.left-section {
+  flex: 1 0 50%;
+  margin-right: 10px;
+}
+
+.connected-users {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.connected-users-header {
+  margin-right: 10px;
+}
+
+.connected-users h6 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: small;
+}
+
+.connected-users h6 i {
+  margin-left: 5px;
+}
+
+.user-list {
+  display: flex;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info h4 {
+  margin-bottom: 5px;
+}
+
+.user-info h4 i {
+  margin-left: 5px;
+}
+
+.fa-circle.active {
+  color: #4caf50;
+}
+
+.right-section {
+  flex: 1 0 50%;
+}
+
+.search-users {
+  margin-bottom: 20px;
+}
+
+.search-users h3 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-users h3 i {
+  margin-left: 5px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input[type="text"] {
+  width: calc(100% - 40px);
+  padding: 8px 10px;
+  padding-right: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search i {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  color: #999999;
+}
+
+.chat-input {
+  margin-top: 20px;
+}
+
+.chat-input input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+}
