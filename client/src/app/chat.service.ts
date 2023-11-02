@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as SignalR from '@microsoft/signalr';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +11,24 @@ export class ChatService {
       .withUrl('http://localhost:5001/chat')
       .configureLogging(SignalR.LogLevel.Information)
       .build();
+
+  public messages$ = new BehaviorSubject<any>([]);
+  public connectedUsers$ = new BehaviorSubject<string[]>([]);
+  public messages: any[] = [];
+  public users: string[] = [];
+
   constructor() {
     this.startConnection();
     this.chatConnection.on(
       'ReceiveMessage',
       (user: string, message: string, messageTime: string) => {
-        console.log(user, message, messageTime);
+        this.messages.push({ user, message, messageTime });
+        this.messages$.next(this.messages);
       }
     );
 
     this.chatConnection.on('ConnectedUser', (user: any) => {
-      console.log(user);
+      this.connectedUsers$.next(user);
     });
   }
 
@@ -38,6 +46,10 @@ export class ChatService {
 
   public async joinRoom(user: string, room: string) {
     try {
+      if (this.chatConnection.state !== SignalR.HubConnectionState.Connected) {
+        await this.startConnection();
+      }
+
       await this.chatConnection.invoke('JoinRoom', { user, room });
     } catch (error) {
       console.log(error);
