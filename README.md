@@ -1,11 +1,11 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./Client/src/assets/images/chat.jpeg" alt="logo" width="140"  height="auto" />
+  <img src="./client/src/assets/images/chat.jpeg" alt="logo" width="140"  height="auto" />
   <h1><b>Chat - App</b></h1>
 </div>
 <div align="center">
-  <img src="./Client/src/assets/images/chat_img.jpg" alt="cover"   height="auto" />
+  <img src="./client/src/assets/images/chat_img.jpg" alt="cover"   height="auto" />
 </div>
 
 # 📗 Table of Contents
@@ -18,9 +18,9 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
+  <!-- - [Install](#install)
   - [Usage](#usage)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#triangular_flag_on_post-deployment)-->
 - [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
