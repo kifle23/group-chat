@@ -2,7 +2,7 @@
 
 namespace ChatApp.Hub
 {
-    public class ChatHub:Microsoft.AspNetCore.SignalR.Hub
+    public class ChatHub : Microsoft.AspNetCore.SignalR.Hub
     {
         private readonly IDictionary<string, UserRoomConnection> _connection;
 
@@ -15,7 +15,7 @@ namespace ChatApp.Hub
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, userConnection.Room!);
             _connection.Add(Context.ConnectionId, userConnection);
-            await Clients.Group(userConnection.Room!).SendAsync("ReceiveMessage", $"{userConnection.User} has joined the room {userConnection.Room}");
+            await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", arg2: $"{userConnection.User} has joined the room {userConnection.Room}", arg3: DateTime.Now);
             await SendConnectedUser(userConnection.Room!);
         }
 
@@ -24,7 +24,7 @@ namespace ChatApp.Hub
             if (_connection.TryGetValue(Context.ConnectionId, out var userConnection))
             {
                 await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: userConnection.User, arg2: message, arg3: DateTime.Now);
-            }            
+            }
         }
 
         public Task SendConnectedUser(string room)
@@ -37,7 +37,7 @@ namespace ChatApp.Hub
         {
             if (_connection.TryGetValue(Context.ConnectionId, out var userConnection))
             {
-                await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", $"{userConnection.User} has left the room");
+                await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", arg2: $"{userConnection.User} has left the room", arg3: DateTime.Now);
                 await SendConnectedUser(userConnection.Room!);
             }
             await base.OnDisconnectedAsync(exception);
