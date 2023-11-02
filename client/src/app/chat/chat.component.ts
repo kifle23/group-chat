@@ -49,9 +49,6 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       .leaveRoom()
       .then(() => {
         this.route.navigate(['/']);
-        setTimeout(() => {
-          window.location.reload();
-        });
       })
       .catch((error) => {
         console.log(error);

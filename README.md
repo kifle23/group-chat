@@ -1,27 +1,156 @@
-# ChatApp
+<a name="readme-top"></a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+<div align="center">
+  <img src="./Client/src/assets/images/chat.jpeg" alt="logo" width="140"  height="auto" />
+  <h1><b>Chat - App</b></h1>
+</div>
+<div align="center">
+  <img src="./Client/src/assets/images/chat_img.jpg" alt="cover"   height="auto" />
+</div>
 
-## Development server
+# 📗 Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    <!-- - [Key Features](#key-features) -->
+  <!-- - [🚀 Live Demo](#live-demo) -->
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🔭 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-## Code scaffolding
+<!-- PROJECT DESCRIPTION -->
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# 🎯 Chat App<a name="about-project"></a>
 
-## Build
+> Chat App is built using Angular, ASP.net Core, and Bootstrap. It provides a range of features including login and registration, photo upload, and pagination, making it an ideal solution for managing property listings. The application is designed to be user-friendly and responsive, with a clean and modern interface that makes it easy to use.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠 Built With <a name="built-with"></a>
 
-## Running unit tests
+### Tech Stack <a name="tech-stack"></a>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<details>
+  <summary>Technology</summary>
+  <ul>
+    <li>Angular</li>
+    <li>Bootstrap 5</li>
+    <li>SignalR</li>
+    <li>.NET 7</li>
+  </ul>
+</details>
 
-## Running end-to-end tests
+<details>
+  <summary>Tools</summary>
+  <ul>
+    <li>VS Code</li>
+    <li>Visual Studio Community 2022</li>
+    <li>Git</li>
+  </ul>
+</details>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Further help
+LIVE DEMO
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🚀 Live Demo <a name="live-demo"></a>
+
+<!-- - [Live Demo Link](https://housing-app-ang.web.app/) -->
+Coming soon...
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+you have to those tools in your local machine.
+
+- [ ] NPM
+- [ ] GIT & GITHUB
+- [ ] Any Code Editor (VS Code, Visual Studio 2022, Brackets, etc)
+
+### Setup
+
+Clone the project.
+
+```bash
+  git clone https://github.com/kifle23/group-chat.git
+```
+
+Go to the project directory.
+
+```bash
+  cd group-chat
+```
+
+In the project directory, you can run:
+
+```bash
+  ng serve
+```
+
+Runs the app in the development mode.
+1. Run API
+2. Open [http://localhost:4200](http://localhost:4200) to view it in your browser.
+
+The page will reload when you make changes.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+### Author:
+
+👤 **Kifle Haile**
+
+- GitHub: [@githubhandle](https://github.com/kifle23)
+- Twitter: [@twitterhandle](https://twitter.com/KifleHaile12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kifle-haile)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/kifle23/group-chat/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## 👋 Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🔭Acknowledgments <a name="acknowledgements"></a>
+
+- [Microverse](https://www.microverse.org/).
+- [Letsprogram](https://letsprogram.in/home)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
