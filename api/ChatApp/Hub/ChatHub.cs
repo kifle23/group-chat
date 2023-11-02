@@ -13,8 +13,8 @@ namespace ChatApp.Hub
 
         public async Task JoinRoom(UserRoomConnection userConnection)
         {
-            await Groups.AddToGroupAsync(Context.ConnectionId, userConnection.Room!);
-            _connection.Add(Context.ConnectionId, userConnection);
+            await Groups.AddToGroupAsync(Context.ConnectionId, groupName:userConnection.Room!);
+            _connection[Context.ConnectionId]= userConnection;
             await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", arg2: $"{userConnection.User} has joined the room {userConnection.Room}", arg3: DateTime.Now);
             await SendConnectedUser(userConnection.Room!);
         }
@@ -33,14 +33,15 @@ namespace ChatApp.Hub
             return Clients.Group(room).SendAsync(method: "ConnectedUser", users);
         }
 
-        public override async Task OnDisconnectedAsync(Exception? exception)
+        public override Task OnDisconnectedAsync(Exception? exception)
         {
             if (_connection.TryGetValue(Context.ConnectionId, out var userConnection))
             {
-                await Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", arg2: $"{userConnection.User} has left the room", arg3: DateTime.Now);
-                await SendConnectedUser(userConnection.Room!);
+                _connection.Remove(Context.ConnectionId);
+                Clients.Group(userConnection.Room!).SendAsync(method: "ReceiveMessage", arg1: "Lets program bot", arg2: $"{userConnection.User} has left the room", arg3: DateTime.Now);
+                SendConnectedUser(userConnection.Room!);
             }
-            await base.OnDisconnectedAsync(exception);
+            return base.OnDisconnectedAsync(exception);
         }
 
 
