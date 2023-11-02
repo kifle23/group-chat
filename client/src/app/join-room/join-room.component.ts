@@ -30,6 +30,8 @@ export class JoinRoomComponent implements OnInit {
 
   joinRoom(): void {
     const { user, room } = this.joinRoomForm.value;
+    sessionStorage.setItem('user', user);
+    sessionStorage.setItem('room', room);
     this.chatService
       .joinRoom(user, room)
       .then(() => {
