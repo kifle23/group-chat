@@ -36,3 +36,8 @@
     transform: rotateZ(360deg);
   }
 }
+
+.inner_container {
+  background-color: #52ACFF;
+  background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
+}

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center">
-    <div class="col-md-6 rounded-lg shadow-lg bg-light p-4">
+    <div class="col-md-6 rounded-lg shadow-lg bg-light p-4  inner_container">
       <h1 class="text-center mb-4 cool-heading">Join Room</h1>
       <form [formGroup]="joinRoomForm">
         <div class="mb-3">
@@ -30,7 +30,8 @@
             required
           />
         </div>
-        <button [disabled]="joinRoomForm.invalid"
+        <button
+          [disabled]="joinRoomForm.invalid"
           (click)="joinRoom()"
           type="submit"
           class="btn btn-primary btn-block mb-3"
