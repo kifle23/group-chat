@@ -1,41 +1,50 @@
-<div class="chatroom-container">
-  <div class="header">
-    <div class="welcome-message">
-      <h2>Welcome to the Chatroom!</h2>
-    </div>
-    <button class="btn btn-danger">Leave Chat</button>
+<div class="chat-container">
+  <div class="chat-sidebar">
+    <h4 class="text-info-emphasis">Connected Users</h4>
+    <ul class="user-list">
+      <li
+        *ngFor="let user of this.chatService.connectedUsers$ | async"
+        class="user-item"
+      >
+        <i class="fas fa-user-circle fa-2x text-info"></i>
+        <span style="color: #fff; font-weight: 600"
+          >{{ user }}
+          <i style="margin-left: 0.5rem" class="fas fa-circle text-success"></i
+        ></span>
+      </li>
+    </ul>
   </div>
 
-  <div class="chatroom-body">
-    <div class="left-section">
-      <div class="connected-users">
-        <div class="connected-users-header">
-          <h6>
-            Connected Users <i class="fas fa-user-friends text-warning"></i>
-          </h6>
-        </div>
-        <div class="search-users">
-          <div class="search">
-            <input type="text" placeholder="Search users..." />
-            <i class="fas fa-search text-info"></i>
-          </div>
-        </div>
-        <div class="right-section">
-          <div class="chat-input">
-            <input type="text" placeholder="Type your message..." />
-          </div>
+  <div class="chat-main">
+    <div class="header">
+      <div class="welcome-message">
+        <h4 class="text-info-emphasis">Welcome to {{ roomName }} room!</h4>
+      </div>
+      <button (click)="leaveRoom()" class="btn btn-danger">Leave Chat</button>
+    </div>
+    <div #divScroll class="chat-messages">
+      <div
+        *ngFor="let message of this.chatService.messages$ | async"
+        [ngClass]="{
+          incoming: message.user != loggedInUser,
+          outgoing: message.user === loggedInUser
+        }"
+      >
+        <div>{{ message.message }}</div>
+        <div class="message-time">
+          {{ message.messageTime | date : "shortTime" }}
         </div>
       </div>
-      <div class="user-list">
-        <!-- Dummy user profiles -->
-        <div class="user-profile">
-          <i class="fas fa-user-circle fa-3x text-info"></i>
-          <div class="user-info">
-            <h6>Username <i class="fas fa-circle active"></i></h6>
-          </div>
-        </div>
-        <!-- Add more user profiles here -->
-      </div>
+    </div>
+
+    <div class="chat-input">
+      <input
+        (keyup.enter)="sendMessage()"
+        type="text"
+        [(ngModel)]="inputMessage"
+        placeholder="Type a message"
+      />
+      <i (click)="sendMessage()" class="fas fa-paper-plane text-info"></i>
     </div>
   </div>
 </div>
