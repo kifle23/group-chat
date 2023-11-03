@@ -31,7 +31,7 @@
 
 # 🎯 Chat App<a name="about-project"></a>
 
-> Chat App is built using Angular, ASP.net Core, and Bootstrap. It provides a range of features including login and registration, photo upload, and pagination, making it an ideal solution for managing property listings. The application is designed to be user-friendly and responsive, with a clean and modern interface that makes it easy to use.
+> Chat App is built using Angular, .Net (SignalR), and Bootstrap.
 
 ## 🛠 Built With <a name="built-with"></a>
 
