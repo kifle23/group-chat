@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ChatService {
   public chatConnection: SignalR.HubConnection =
     new SignalR.HubConnectionBuilder()
-      .withUrl('https://group-chat-back-end.onrender.com/')
+      .withUrl('https://group-chat-back-end.onrender.com/chat')
       .configureLogging(SignalR.LogLevel.Information)
       .build();
 
