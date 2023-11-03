@@ -31,7 +31,7 @@
 
 # 🎯 Chat App<a name="about-project"></a>
 
-> Chat App is built using Angular, .Net (SignalR), and Bootstrap.
+> This App is created to exercise SignalR.
 
 ## 🛠 Built With <a name="built-with"></a>
 
