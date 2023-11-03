@@ -15,7 +15,7 @@ builder.Services.AddSingleton<IDictionary<string, UserRoomConnection>>(new Dicti
 var app = builder.Build();
 
 app.UseCors(options =>
-options.WithOrigins("http://localhost:4200")
+options.WithOrigins("https://chatapp-signalr.web.app")
 .AllowAnyHeader()
 .AllowCredentials());
 
